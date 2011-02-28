@@ -30,18 +30,41 @@ public class Display {
 		Scanner in = new Scanner(System.in);
                 
 		System.out.printf("Inserisci un numero: ");
-		String number = in.nextLine();
+		String num1 = in.nextLine();
+		numberToDigit(num1);
+		System.out.printf("Inserisci un numero: ");
+		String num2 = in.nextLine();
+		numberToDigit(num2);
+		System.out.printf("La loro somma : \n");
+		addDigit(num1,num2);
 		
-		numberToDigit(number);
+		/*
 		System.out.printf("to vertical \n");
 		toDigitVertical();
 		System.out.printf("to horizontal \n");
 		toDigitHorizontal();
+		*/
 	    
 
 	}
 	
+	/*
+	 * add and print to digit 
+	 * @param: the number to convert
+	 */
+	public static void addDigit(String num1, String num2){
+		int a,b,c;
+		a = stringToInt(num1);
+		b= stringToInt(num2);
+		c = a+b;
+		numberToDigit(String.valueOf(c));
+	}
 	
+	/*
+	 * convert a string into int
+	 * @param: the string to convert
+	 * @return: the converted number
+	 */
 	public static int stringToInt(String number){
 		int n = 0;
 		for(int j=0, i=number.length()-1; i>=0; j++, i--)
