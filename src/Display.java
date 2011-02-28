@@ -16,20 +16,27 @@ public class Display {
 				{{' ','_',' '},{'|','_','|'},{'|','_','|'}}, //8
 				{{' ','_',' '},{'|','_','|'},{' ','_','|'}}  //9		
 				};
-	/* to do
+	/*TODO
 	static char signes[][][] = {
 				{{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //0
 				{{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //1
 				{{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //2
 				{{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}  //3
-				};*/
+				};
+	*/
 	
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		
+                
 		System.out.printf("Inserisci un numero: ");
 		String number = in.nextLine();
+		
+		numberToDigit(number);
+		System.out.printf("to vertical \n");
+		toDigitVertical();
+		System.out.printf("to horizontal \n");
+		toDigitHorizontal();
 	    
 
 	}
@@ -42,6 +49,10 @@ public class Display {
 		return n;
 	}
 	
+	/*
+	 * print the number passed like 7-segment display 
+	 * @param: the number to convert
+	 */
 	public static void numberToDigit(String number){
 		
 		for(int i=0; i<number.length(); i++)
@@ -86,6 +97,8 @@ public class Display {
 	}
 	
 	/*
+	 *Print digit from 0 to 9 in horizontal
+	 */
 	public static void toDigitHorizontal(){
 		
 		for(int i=0; i<3; i++){
@@ -100,6 +113,9 @@ public class Display {
 			
 	}
 	
+	/*
+	 *Print digit from 0 to 9 in vertical
+	 */
 	public static void toDigitVertical(){
 	
 		for(int i=0; i<10; i++){
@@ -112,7 +128,7 @@ public class Display {
 		System.out.println();
 			
 		}
-	}*/
+	}
 }
 
 	
