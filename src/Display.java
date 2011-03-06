@@ -3,7 +3,7 @@ import java.lang.*;
 import java.math.*;
 
 public class Display {
-
+    
     static char digit[][][] = {
 			    {{' ','_',' '},{'|',' ','|'},{'|','_','|'}}, //0
 			    {{' ',' ',' '},{' ',' ','|'},{' ',' ','|'}}, //1
@@ -19,37 +19,18 @@ public class Display {
     
     static char comma[][] = {{' ',' ','.'}};
     
-    /* to do
-    static char signes[][][] = {
-                            {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //0
-                            {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //1
-                            {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}, //2
-                            {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}  //3
-                            };
-    */
     
     
-    public static void main(String[] args) {
-            
-        Scanner in = new Scanner(System.in);
-        
-        System.out.printf("Inserisci un numero: ");
-        String number = in.nextLine();
-        
-        if(isDouble(number))
-             doubleToDigit(number);
-        else
-             intToDigit(number);
+    public void Display(){
     }
-    
-    
-    public static boolean isDouble(String number){
+
+    public boolean isDouble(String number){
             
         return Double.parseDouble(number) - Math.rint(Double.parseDouble(number)) != 0;
                     
     }
     
-    public static void doubleToDigit(String number){
+    public void doubleToDigit(String number){
         
         for(int i=0; i<number.length(); i++)
                 if(number.charAt(i) != '.')        
@@ -73,7 +54,7 @@ public class Display {
         System.out.printf("\n");               
     }
     
-    public static void intToDigit(String number){
+    public void intToDigit(String number){
             
         for(int i=0; i<number.length(); i++)
                 numberToDigitFirstLine( Character.getNumericValue( number.charAt(i)));
@@ -89,7 +70,7 @@ public class Display {
 
     }
     
-    private static void numberToDigitFirstLine(int number){
+    private void numberToDigitFirstLine(int number){
             
         for(int j=0; j<3; j++){
                 System.out.printf("%c",digit[number][0][j]);					
@@ -97,7 +78,7 @@ public class Display {
         System.out.printf(" ");
     }
     
-    private static void numberToDigitSecondLine(int number){
+    private void numberToDigitSecondLine(int number){
             
         for(int j=0; j<3; j++){
                 System.out.printf("%c",digit[number][1][j]);					
@@ -105,7 +86,7 @@ public class Display {
         System.out.printf(" ");
     }
     
-    private static void numberToDigitThirdLine(int number){
+    private void numberToDigitThirdLine(int number){
         
         for(int j=0; j<3; j++){
                 System.out.printf("%c",digit[number][2][j]);					
