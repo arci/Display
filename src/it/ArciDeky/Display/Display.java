@@ -12,7 +12,7 @@ public class Display {
 
     public static void ask() {
 	Scanner in = new Scanner(System.in);
-	System.out.print("Inserisci un numero: ");
+	System.out.print("Insert a number: ");
 	String number = in.nextLine();
 
 	DigitBuilder display = new DigitBuilder();
