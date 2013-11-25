@@ -1,4 +1,4 @@
-package it.ArciDeky.Display;
+package it.display;
 
 import java.util.Scanner;
 
@@ -13,14 +13,7 @@ public class Display {
     public static void ask() {
 	Scanner in = new Scanner(System.in);
 	System.out.print("Insert a number: ");
-	String number = in.nextLine();
-
-	DigitBuilder display = new DigitBuilder();
-	if (display.isDouble(number)) {
-	    display.doubleToDigit(number);
-	} else {
-	    display.intToDigit(number);
-	}
+	DigitPrinter.print(in.nextLine());
 	System.out.println();
     }
 }
